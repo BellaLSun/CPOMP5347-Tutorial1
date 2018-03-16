@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Share Your Travels -- New York - Central Park</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'django_colorbox/css/colorbox.css' %}"/>
+    <script src="{% static "django_colorbox/js/jquery.colorbox-min.js" %}"></script>
+</head>
+<body>
+<header>
+    <h1>Share Your Travels</h1>
+    <h2>New York - Central Park</h2>
+    <nav>
+        <ul>
+            <li><a href="#description">Description</a></li>
+            <li><a href="#Related Photo">Related Photo</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+    </nav>
+</header>
+<article>
+    <section id="description">
+        <h3>Description</h3>
+        <p>Photo by Randy Connolly</p>
+        <p>This photo of Conservatory Pond in
+            <a href="http://www.centralpark.com/">Central Park</a> in
+            <a href="newyork.html">New York City</a> was
+            taken on October 22, 2011 with a Canon EOS 30D camera.
+        </p>
+        <figure class="central park">
+            <a href="{% static "images/large-central-park.jpg" %}"><img
+                    src="{% static "images/central-park.jpg" %}" alt="Central Park"
+                    title="Central Park"/></a>
+            <figcaption>Conservatory Pond in Central Park</figcaption>
+        </figure>
+        <div class="share">
+            <p>Share:</p>
+            <img src="{% static "images/social/email_16.png" %}" alt=" Email this to someone"/>
+            <img src="{% static "images/social/rss_16.png" %}" alt="Syndicated content"/>
+            <img src="{% static "images/social/twitter_16.png" %}" alt="Share this on Twitter"/>
+            </p>
+        </div>
+
+    </section>
+
+    <section id="Related Photo">
+        <p>Related Photos:</p>
+        <hr></hr>
+        <div id="related_imgs">
+            <a href="{% static "images/related-large1.jpg" %}">
+                <img src="{% static "images/related-square1.jpg" %}" alt="Grass"/></a>
+            <a href="{% static "images/related-large2.jpg" %}">
+                <img src="{% static "images/related-square2.jpg" %}" alt="Forest"/></a>
+            <a href="{% static "images/related-large3.jpg" %}">
+                <img src="{% static "images/related-square3.jpg" %}" alt="Skyscraper"/></a>
+        </div>
+
+
+    </section>
+    <section id="reviews">
+        <h3>Reviews</h3>
+        <div>
+
+            <p>By Ricardo on
+                <time>September 15, 2012</time>
+            </p>
+            <p>Easy on the HDR buddy.</p>
+        </div>
+        <hr/>
+    </section>
+</article>
+<footer>
+    <p><em>Copyright &copy; 2013 Share Your Travels</em></p>
+</footer>
+</body>
+</html>
+
+<script>
+    $(function () {
+        "use strict";
+        $('#related_imgs')
+            .find('a')
+            .colorbox({
+                rel: 'gallery'
+            });
+    });
+</script>
+
+<style>
+    /* general text formatting */
+
+    h1, h2, h3, nav, footer {
+        font-family: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+    }
+
+    body {
+        font-family: Georgia, Cambria, "Times New Roman", serif;
+        font-size: 100%;
+        background-color: #213643;
+    }
+
+    h1 {
+        font-size: 24px; /* older browsers */
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 14px;
+        font-size: 0.75rem;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-size: 1.125rem;
+        border-bottom: solid 1pt #999999;
+        margin: 0 0 0.5em 0;
+    }
+
+    p {
+        font-size: 16px;
+        font-size: 1rem;
+    }
+
+    nav {
+        font-size: 18px;
+        font-size: 1.125rem;
+    }
+
+    /* link styling */
+
+    a:link {
+        font-weight: bold;
+        color: #47B3D7;
+    }
+
+    a:visited {
+        color: #BB78FF;
+    }
+
+    a:hover {
+        background-color: #FFFFCC;
+    }
+
+    /* header and navigation */
+
+    header, footer {
+        color: white;
+        background-color: #3D6271;
+        margin: 0em 4em 0.5em 4em;
+    }
+
+    hgroup {
+        padding: 0.5em;
+    }
+
+    nav {
+        background-color: #728B96;
+    }
+
+    nav ul li {
+        list-style: none;
+        display: inline;
+    }
+
+    nav {
+        padding: 0.25em;
+    }
+
+    nav a {
+        padding: 0.25em;
+    }
+
+    /* article styling */
+    article {
+        background-color: white;
+        margin: 1em 4em 1em 4em;
+        padding: 0.5em;
+    }
+
+    .byline, figcaption {
+        color: #728B96;
+        font-style: italic;
+        font-size: 14px;
+        font-size: .875rem;
+    }
+
+    /* figure styling */
+
+    figure {
+        margin: 0.5em 0 0.5em 0;
+    }
+
+    figure img {
+        padding: 0.25em;
+        border: solid 1px #999999;
+    }
+
+    /* share styling */
+    #share {
+        margin: 0.25em 0 2em 0;
+        padding: 0.5em;
+        width: 485px;
+        background-color: #9FAAB0;
+        border-radius: 4px;
+        background-image: url(images/gray-gradient.gif);
+        background-repeat: repeat-x;
+        width: 200px;
+        height: 100px;
+        background: red;
+    }
+
+    /* review styling */
+
+    #reviews {
+        margin-top: 1em;
+    }
+
+    #reviews div {
+        border-bottom: dotted 1pt #999999;
+        margin-bottom: 1.25em;
+    }
+
+    #reviews p {
+        margin: 0;
+    }
+
+    /* footer styling */
+    footer p {
+        font-size: 14px;
+        font-size: .875rem;
+    }
+
+</style>
